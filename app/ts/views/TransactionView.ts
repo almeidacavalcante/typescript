@@ -1,16 +1,9 @@
-class TransactionView {
+import { View } from "../views/View";
 
-    private _element: Element;
+class TransactionView extends View<Transaction> {
 
     constructor(selector: string) {
-        this._element = document.querySelector(selector);
-
-    }
-    
-    public update(model: TransactionList): void {
-        console.log(this.template(model));
-        
-        this._element.innerHTML = this.template(model);
+        super(selector)
     }
 
     public template(model: TransactionList): string {
